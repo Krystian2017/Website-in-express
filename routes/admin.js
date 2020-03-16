@@ -13,20 +13,39 @@ router.all("*", (req, res, next) => {
 
 /* GET home page. */
 router.get("/", (req, res) => {
-  // const newsData = new News({
-  //   title: "test title",
-  //   description: "Desc"
-  // });
+  News.find({}, (err, data) => {
+    console.log(data);
 
-  // newsData.save(err => {
-  //   console.log(err);
-  // });
-
-  res.render("admin/index", { title: "Admin" });
+    res.render("admin/index", { title: "Admin", data });
+  });
 });
 
 router.get("/news/add", (req, res) => {
-  res.render("admin/news-form", { title: "Add news" });
+  res.render("admin/news-form", { title: "Add news", errors: {}, body: {} });
+});
+
+router.post("/news/add", (req, res) => {
+  const body = req.body;
+
+  const newsData = new News(body);
+  const errors = newsData.validateSync();
+
+  console.log(errors);
+
+  newsData.save(err => {
+    if (err) {
+      res.render("admin/news-form", { title: "Add news", errors, body });
+      return;
+    } else {
+      res.redirect("/admin");
+    }
+  });
+});
+
+router.get("/news/delete/:id", (req, res) => {
+  News.findByIdAndDelete(req.params.id, err => {
+    res.redirect("/admin");
+  });
 });
 
 module.exports = router;
