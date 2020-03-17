@@ -14,7 +14,7 @@ router.all("*", (req, res, next) => {
 /* GET home page. */
 router.get("/", (req, res) => {
   News.find({}, (err, data) => {
-    console.log(data);
+    // console.log(data);
 
     res.render("admin/index", { title: "Admin", data });
   });
@@ -30,7 +30,7 @@ router.post("/news/add", (req, res) => {
   const newsData = new News(body);
   const errors = newsData.validateSync();
 
-  console.log(errors);
+  // console.log(errors);
 
   newsData.save(err => {
     if (err) {
