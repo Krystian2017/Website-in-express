@@ -8,9 +8,13 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    ul
+    ul(class='nav')
      +item('Home', '/')
      +item('News', '/news')
      +item('Quiz', '/quiz')
      +item('Admin', '/admin')
+    div(class='info')
+      p Good morning everyone! My name is Krystian Bieniek. I am Front-end developer and welcome to my website which I built in Express, Node.js and cloud mongo DB Atlas. A simple site where I focused more on back-end to increase my ability to work on back-end with a cloud database. To see my code please visit  
+        a(href='https://github.com/Krystian2017/Website-in-express' class='github-link')='Github'
+      img(src='https://www.krystianbieniek.pl/images/1.jpg')
     block content

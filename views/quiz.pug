@@ -1,23 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  if show
-    form(method='post')
-      p What is your favourite season?
-      ul
+  div(class='content')
+    h1= title
+    if show
+      form(method='post' class='quiz-form')
+        p What is your favourite season?
+        ul
+          each item in data
+            li
+              span=item.title
+              input(type='radio' name='quiz' value=item._id)
+        input(type='submit' value='Vote' class='vote-buttom')
+        p Vote to view results
+    else
+      h2 You gave your vote
+      ul(class='results-quiz')
         each item in data
-          li
-            span=item.title
-            input(type='radio' name='quiz' value=item._id)
-      input(type='submit' value='Vote')
-      p Vote to view results
-  else
-    h2 You gave your vote
-    p Results
-    ul
-      each item in data
-        li #{item.title} Results #{item.vote} (#{Math.round(item.vote/sum*100)}%)
+          li #{item.title} Results #{item.vote} (#{Math.round(item.vote/sum*100)}%)
 
-    p Votes: #{sum}
+      p(class='sum-votes') Votes: #{sum}
 

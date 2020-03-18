@@ -1,13 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  form(method='get')
-    input(type='text' value=search name='search')
-    button(type='submit') search
+  div(class='content')
+    h1= title
+    form(method='get' class='search-news')
+      input(type='text' value=search name='search')
+      button(type='submit') search
 
-  each item in data
-    article
-      h1(class='title-news')=item.title
-      p(class='date')=item.created
-      p=item.description
+    each item in data
+      article
+        h2(class='title-news')=item.title
+        p(class='date')=item.created
+        p=item.description

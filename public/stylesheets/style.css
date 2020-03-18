@@ -1,12 +1,241 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #555;
+}
+
+h1 {
+  color: #00b7ff;
+}
+
+h2 {
+  margin: 20px 0;
+  color: #00ccff;
+}
+
+.news-form button,
+.search-news button,
+.vote-buttom,
+.login-button {
+  margin: 10px 0;
+  padding: 5px;
+  color: #fff;
+  background-color: #00ccff;
+  border: 1px solid #00ccff;
+  cursor: pointer;
+}
+
+/* NAV */
+
+.nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  background-color: #f4f4f4;
+}
+
+.nav > li > a {
+  text-decoration: none;
   color: #00b7ff;
 }
 
 .active {
+  font-weight: bold;
+}
+
+.info {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #00ccff;
+}
+
+.info > img {
+  max-width: 20%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.info > p {
+  max-width: 50%;
+  margin: 20px;
+  color: #f4f4f4;
+  font-size: 20px;
+}
+
+.info > p > a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.content {
+  padding: 50px;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #f1f1f1;
+}
+
+.content > p {
+  margin-top: 20px;
+}
+
+.content > p > span {
+  font-weight: bold;
+  color: red;
+}
+
+/* LOGIN page */
+
+.login label {
+  width: 150px;
+  margin: 5px 5px;
+  float: left;
+  clear: left;
+}
+
+.login input,
+textarea {
+  width: 140px;
+  margin: 5px;
+}
+
+/* ADMIN page */
+
+nav {
+  margin: 20px 0;
+}
+
+nav > ul > li {
+  list-style-type: none;
+}
+
+nav > ul > li > a {
+  padding: 5px;
+  color: #fff;
+  background-color: #00ccff;
+  text-decoration: none;
+  border: 1px solid #00ccff;
+}
+
+table {
+  padding: 10px;
+  color: #f1f1f1;
+  background-color: #555;
+  border-spacing: 0;
+}
+
+table tr,
+th,
+td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #333;
+}
+
+table a {
+  color: #00ccff;
+  text-decoration: none;
+}
+
+/* NEWS FORM page */
+
+.news-form {
+  width: 50%;
+  margin: 10px 0;
+  padding: 20px;
+  color: #f1f1f1;
+  background-color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.news-form label {
+  width: 150px;
+  margin: 5px 5px;
+  float: left;
+  clear: left;
+}
+
+.news-form textarea,
+input {
+  width: 150px;
+  margin: 5px;
+}
+
+/* NEWS page */
+
+.search-news {
+  margin: 20px 0;
+}
+
+.search-news input {
+  padding: 5px;
+}
+
+article .date {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 10px;
+}
+
+/*  QUIZ page */
+
+.quiz-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #555;
+  color: #f1f1f1;
+}
+
+.quiz-form p {
+  margin: 20px 0;
+}
+
+.quiz-form > ul > li {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.quiz-form > ul > li > span {
+  width: 150px;
+  float: left;
+  clear: left;
+}
+
+.vote-buttom {
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.results-quiz {
+  margin-top: 10px;
+  padding: 5px 0 10px 10px;
+  background-color: #555;
+  color: #f1f1f1;
+}
+
+.results-quiz > li {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.sum-votes {
+  font-size: 16;
   font-weight: bold;
 }
